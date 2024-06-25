@@ -16,7 +16,8 @@ class Calc {
     }
 
     appendNumber(number) {
-        this.currenOperand = number
+        if (number === '.' && this.currenOperand.includes('.')) return
+        this.currenOperand = this.currenOperand.toString() + number.toString()
     }
 
     chooseOperation(operation) {
